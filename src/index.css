@@ -5,3 +5,23 @@
 :root{
   background-color: black;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px; 
+    height: 8px; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #999; 
+    border-radius: 3px; 
+  }
+  
+
+  ::-webkit-scrollbar-track {
+    background: #1e1e1e; 
+    border-radius: 3px;
+  }
