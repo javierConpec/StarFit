@@ -5,9 +5,17 @@ import membresia2 from "../assets/membresia2.jpg";
 import membresia3 from "../assets/membresia3.jpg";
 import Button from "../components/Button";
 import { useState } from "react";
+import { useStripeCheckout } from "../hooks/StripeHook";
+
+const planes = [
+  { nombre: "Motivación", precio: "S/ 59", priceId: "price_123_motivacion" },
+  { nombre: "Avanzado", precio: "S/ 89", priceId: "price_123_avanzado" },
+  { nombre: "Premium", precio: "S/ 129", priceId: "price_123_premium" },
+];
 
 const plans = () => {
-    const [loading] = useState(false);
+  const [loading] = useState(false);
+  const { redirectToCheckout } = useStripeCheckout();
 
   return (
     <>
@@ -87,6 +95,7 @@ const plans = () => {
                 <Button
                   text={loading ? "cargando..." : "Empezar ahora"}
                   disabled={loading}
+                  onClick={() => redirectToCheckout("price_123_motivacion")}
                 />
               </div>
             </div>
@@ -159,6 +168,7 @@ const plans = () => {
                 <Button
                   text={loading ? "cargando..." : "Empezar ahora"}
                   disabled={loading}
+                  onClick={() => redirectToCheckout("price_123_avanzado")} // usa el priceId correcto
                 />
               </div>
             </div>
@@ -232,6 +242,7 @@ const plans = () => {
                 <Button
                   text={loading ? "cargando..." : "Empezar ahora"}
                   disabled={loading}
+                  onClick={() => redirectToCheckout("price_123_premium")} // usa el priceId correcto
                 />
               </div>
             </div>
