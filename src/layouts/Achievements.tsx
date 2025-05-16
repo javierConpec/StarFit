@@ -10,6 +10,7 @@ const Logros = () => {
     return(
         <div className="mt-20">
             <h2 className=" text-white font-extrabold text-4xl">LO QUE LOGRARAS</h2>
+            <div className="h-[1px] w-[50%] bg-white m-auto mt-5"></div>
             <div className="grid grid-cols-3 w-full gap-x-[60px] gap-y-10 px-10 mt-10 text-white">
                 <div className="w-full h-[300px] border border-yellow-500 shadow-[0_0_10px_3px] shadow-yellow-100 rounded-2xl overflow-hidden">
                     <img src={imagen1} className="cover w-full h-[180px]" />
